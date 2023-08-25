@@ -6,23 +6,12 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const port = process.env.PORT || 3000;
-
 app.use(express.static(__dirname));
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
-
-let chatHistory = [];
 
 io.on('connection', (socket) => {
     console.log('A user connected');
 
-    socket.emit('chatHistory', chatHistory);
-
     socket.on('message', (message) => {
-        chatHistory.push(message);
         io.emit('message', message);
     });
 
@@ -31,6 +20,7 @@ io.on('connection', (socket) => {
     });
 });
 
+const port = process.env.PORT || 3000;
 server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
