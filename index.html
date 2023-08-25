@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Chat</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat-box {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        .chat-log {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #00ff00;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .message {
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .user {
+            background-color: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+        }
+
+        .user-input {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            margin-right: 5px;
+            font-family: "Courier New", monospace;
+            background-color: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #00ff00;
+            color: #000;
+            cursor: pointer;
+        }
+
+        #message-input {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <div class="chat-log" id="chat-log">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="user-input">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-button">Log In</button>
+            <button id="register-button">Register</button>
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Enter</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        // JavaScript code here
+    </script>
+</body>
+</html>
